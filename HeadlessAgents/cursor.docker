@@ -1,0 +1,16 @@
+FROM ubuntu:22.04
+
+# Install curl & bash
+RUN apt-get update && apt-get install -y \
+    curl \
+    bash \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install cursor-cli via official script
+RUN curl https://cursor.com/install -fsS | bash
+
+# Add cursor to PATH if installer didn’t already
+ENV PATH="/root/.cursor/bin:${PATH}"
+
+# Default to showing help
+ENTRYPOINT ["cursor"]

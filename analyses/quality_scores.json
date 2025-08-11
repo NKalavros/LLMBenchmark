@@ -1,0 +1,681 @@
+{
+  "files": [
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_extract.R",
+      "language": "r",
+      "size_bytes": 754,
+      "loc": 24,
+      "comment_ratio": 0.25,
+      "blank_ratio": 0.25,
+      "heuristic_score": 3.25,
+      "llm_metrics": {
+        "readability": 0.9022977369826396,
+        "modularity": 0.2029312233984227
+      }
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_preprocess.R",
+      "language": "r",
+      "size_bytes": 764,
+      "loc": 23,
+      "comment_ratio": 0.261,
+      "blank_ratio": 0.217,
+      "heuristic_score": 3.3,
+      "llm_metrics": {
+        "readability": 0.9029312230115382,
+        "modularity": 0.19890130553150537
+      }
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_evaluate_plot.R",
+      "language": "r",
+      "size_bytes": 1242,
+      "loc": 33,
+      "comment_ratio": 0.152,
+      "blank_ratio": 0.182,
+      "heuristic_score": 3.12,
+      "llm_metrics": {
+        "readability": 0.8851952794450423,
+        "modularity": 0.2
+      }
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_download.R",
+      "language": "r",
+      "size_bytes": 624,
+      "loc": 18,
+      "comment_ratio": 0.278,
+      "blank_ratio": 0.222,
+      "heuristic_score": 3.33,
+      "llm_metrics": {
+        "readability": 0.9222700138825308,
+        "modularity": 0.2
+      }
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_model_fit.R",
+      "language": "r",
+      "size_bytes": 1956,
+      "loc": 65,
+      "comment_ratio": 0.169,
+      "blank_ratio": 0.231,
+      "heuristic_score": 3.11,
+      "llm_metrics": {
+        "readability": 0.9,
+        "modularity": 0.206008665648572
+      }
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_metadata_check.R",
+      "language": "r",
+      "size_bytes": 763,
+      "loc": 23,
+      "comment_ratio": 0.304,
+      "blank_ratio": 0.217,
+      "heuristic_score": 3.39,
+      "llm_metrics": {
+        "readability": 0.9,
+        "modularity": 0.2
+      }
+    },
+    {
+      "agent": "BeastModev3Py",
+      "path": "BeastModev3Py/predict_gestational_age.py",
+      "language": "python",
+      "size_bytes": 4532,
+      "loc": 127,
+      "comment_ratio": 0.11,
+      "blank_ratio": 0.173,
+      "heuristic_score": 3.05,
+      "llm_metrics": {
+        "readability": 0.796466744276115,
+        "modularity": 0.2
+      }
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/optimized_gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 12054,
+      "loc": 347,
+      "comment_ratio": 0.107,
+      "blank_ratio": 0.153,
+      "heuristic_score": 2.21,
+      "llm_metrics": {
+        "readability": 0.8867035761520047,
+        "modularity": 0.20758581779319898
+      }
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/optimized_gestational_age_v2.R",
+      "language": "r",
+      "size_bytes": 15473,
+      "loc": 420,
+      "comment_ratio": 0.1,
+      "blank_ratio": 0.174,
+      "heuristic_score": 1.98,
+      "llm_metrics": {
+        "readability": 0.8817574473971188,
+        "modularity": 0.2
+      }
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/best_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 14466,
+      "loc": 394,
+      "comment_ratio": 0.081,
+      "blank_ratio": 0.165,
+      "heuristic_score": 2.01,
+      "llm_metrics": {
+        "readability": 0.8731058572770513,
+        "modularity": 0.25
+      }
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/final_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 11640,
+      "loc": 351,
+      "comment_ratio": 0.088,
+      "blank_ratio": 0.168,
+      "heuristic_score": 2.14,
+      "llm_metrics": {
+        "readability": 0.8817574482861008,
+        "modularity": 0.24378234991142017
+      }
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 6035,
+      "loc": 193,
+      "comment_ratio": 0.13,
+      "blank_ratio": 0.223,
+      "heuristic_score": 3.04,
+      "llm_metrics": {
+        "readability": 0.881757448286101,
+        "modularity": 0.1985936369780016
+      }
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/efficient_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 8249,
+      "loc": 256,
+      "comment_ratio": 0.09,
+      "blank_ratio": 0.152,
+      "heuristic_score": 2.58,
+      "llm_metrics": {
+        "readability": 0.8867035751212787,
+        "modularity": 0.2851952796329894
+      }
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/advanced_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 13682,
+      "loc": 398,
+      "comment_ratio": 0.098,
+      "blank_ratio": 0.181,
+      "heuristic_score": 2.02,
+      "llm_metrics": {
+        "readability": 0.8463566653481106,
+        "modularity": 0.20373268873441294
+      }
+    },
+    {
+      "agent": "Cline",
+      "path": "Cline/optimized_gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 9753,
+      "loc": 284,
+      "comment_ratio": 0.106,
+      "blank_ratio": 0.173,
+      "heuristic_score": 2.44,
+      "llm_metrics": {
+        "readability": 0.8503873488873672,
+        "modularity": 0.20179862076262375
+      }
+    },
+    {
+      "agent": "Cline",
+      "path": "Cline/install_packages.R",
+      "language": "r",
+      "size_bytes": 431,
+      "loc": 15,
+      "comment_ratio": 0.267,
+      "blank_ratio": 0.267,
+      "heuristic_score": 3.27,
+      "llm_metrics": {
+        "readability": 0.833380528371114,
+        "modularity": 0.19046505395995927
+      }
+    },
+    {
+      "agent": "Cline",
+      "path": "Cline/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 5550,
+      "loc": 165,
+      "comment_ratio": 0.145,
+      "blank_ratio": 0.2,
+      "heuristic_score": 3.09,
+      "llm_metrics": {
+        "readability": 0.8352125262391155,
+        "modularity": 0.2
+      }
+    },
+    {
+      "agent": "ClinePy",
+      "path": "ClinePy/gestational_age_predictor.py",
+      "language": "python",
+      "size_bytes": 13820,
+      "loc": 340,
+      "comment_ratio": 0.124,
+      "blank_ratio": 0.194,
+      "heuristic_score": 2.23,
+      "llm_metrics": {
+        "readability": 0.7605729703147535,
+        "modularity": 0.6386692454414948
+      }
+    },
+    {
+      "agent": "ClinePy",
+      "path": "ClinePy/examine_metadata.py",
+      "language": "python",
+      "size_bytes": 939,
+      "loc": 31,
+      "comment_ratio": 0.097,
+      "blank_ratio": 0.226,
+      "heuristic_score": 2.97,
+      "llm_metrics": {
+        "readability": 0.862245933820551,
+        "modularity": 0.2
+      }
+    },
+    {
+      "agent": "ClinePy",
+      "path": "ClinePy/gestational_age_predictor_v2.py",
+      "language": "python",
+      "size_bytes": 17975,
+      "loc": 465,
+      "comment_ratio": 0.088,
+      "blank_ratio": 0.2,
+      "heuristic_score": 1.83,
+      "llm_metrics": {
+        "readability": 0.6675017781130717,
+        "modularity": 0.5486349244478533
+      }
+    },
+    {
+      "agent": "ClinePy",
+      "path": "ClinePy/gestational_age_predictor_final.py",
+      "language": "python",
+      "size_bytes": 14773,
+      "loc": 378,
+      "comment_ratio": 0.101,
+      "blank_ratio": 0.212,
+      "heuristic_score": 2.04,
+      "llm_metrics": {
+        "readability": 0.8686545000327921,
+        "modularity": 0.5898276639822184
+      }
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/optimized_gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 18756,
+      "loc": 626,
+      "comment_ratio": 0.129,
+      "blank_ratio": 0.206,
+      "heuristic_score": 1.69,
+      "llm_metrics": {
+        "readability": 0.886703577010943,
+        "modularity": 0.7828665522201634
+      }
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/create_results_csv.R",
+      "language": "r",
+      "size_bytes": 441,
+      "loc": 12,
+      "comment_ratio": 0.167,
+      "blank_ratio": 0.167,
+      "heuristic_score": 3.17,
+      "llm_metrics": {
+        "readability": 0.897702262942093,
+        "modularity": 0.1
+      }
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/final_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 12987,
+      "loc": 427,
+      "comment_ratio": 0.143,
+      "blank_ratio": 0.208,
+      "heuristic_score": 2.01,
+      "llm_metrics": {
+        "readability": 0.8777299856015766,
+        "modularity": 0.7622459331201854
+      }
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/simple_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 11526,
+      "loc": 389,
+      "comment_ratio": 0.147,
+      "blank_ratio": 0.219,
+      "heuristic_score": 2.1,
+      "llm_metrics": {
+        "readability": 0.8893309401793763,
+        "modularity": 0.7471472408113822
+      }
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/final_results.R",
+      "language": "r",
+      "size_bytes": 2212,
+      "loc": 68,
+      "comment_ratio": 0.132,
+      "blank_ratio": 0.162,
+      "heuristic_score": 3.1,
+      "llm_metrics": {
+        "readability": 0.9437823499114201,
+        "modularity": 0.2
+      }
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 10137,
+      "loc": 344,
+      "comment_ratio": 0.16,
+      "blank_ratio": 0.235,
+      "heuristic_score": 2.24,
+      "llm_metrics": {
+        "readability": 0.90795637516896,
+        "modularity": 0.8387942592292725
+      }
+    },
+    {
+      "agent": "CursorPy",
+      "path": "CursorPy/gestational_age_prediction_optimized.py",
+      "language": "python",
+      "size_bytes": 14936,
+      "loc": 405,
+      "comment_ratio": 0.123,
+      "blank_ratio": 0.195,
+      "heuristic_score": 2.04,
+      "llm_metrics": {
+        "readability": 0.8486656103194308,
+        "modularity": 0.6997940455010747
+      }
+    },
+    {
+      "agent": "CursorPy",
+      "path": "CursorPy/check_metadata.py",
+      "language": "python",
+      "size_bytes": 1305,
+      "loc": 42,
+      "comment_ratio": 0.119,
+      "blank_ratio": 0.238,
+      "heuristic_score": 3.0,
+      "llm_metrics": {
+        "readability": 0.91480471905138,
+        "modularity": 0.3562176500885798
+      }
+    },
+    {
+      "agent": "CursorPy",
+      "path": "CursorPy/gestational_age_prediction.py",
+      "language": "python",
+      "size_bytes": 8748,
+      "loc": 269,
+      "comment_ratio": 0.123,
+      "blank_ratio": 0.216,
+      "heuristic_score": 2.51,
+      "llm_metrics": {
+        "readability": 0.8324822659377598,
+        "modularity": 0.6077198157914984
+      }
+    },
+    {
+      "agent": "CursorPy",
+      "path": "CursorPy/debug_dataset.py",
+      "language": "python",
+      "size_bytes": 4754,
+      "loc": 113,
+      "comment_ratio": 0.088,
+      "blank_ratio": 0.15,
+      "heuristic_score": 3.03,
+      "llm_metrics": {
+        "readability": 0.9,
+        "modularity": 0.29035101738453556
+      }
+    },
+    {
+      "agent": "Kiro",
+      "path": "Kiro/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 7141,
+      "loc": 207,
+      "comment_ratio": 0.13,
+      "blank_ratio": 0.232,
+      "heuristic_score": 2.95,
+      "llm_metrics": {
+        "readability": 0.8959001097945338,
+        "modularity": 0.23208212943308304
+      }
+    },
+    {
+      "agent": "KiroPy",
+      "path": "KiroPy/gse149440_optimized.py",
+      "language": "python",
+      "size_bytes": 15587,
+      "loc": 440,
+      "comment_ratio": 0.102,
+      "blank_ratio": 0.184,
+      "heuristic_score": 1.93,
+      "llm_metrics": {
+        "readability": 0.8254197704554522,
+        "modularity": 0.20600866505947885
+      }
+    },
+    {
+      "agent": "KiroPy",
+      "path": "KiroPy/gse149440_analysis.py",
+      "language": "python",
+      "size_bytes": 10418,
+      "loc": 298,
+      "comment_ratio": 0.124,
+      "blank_ratio": 0.215,
+      "heuristic_score": 2.37,
+      "llm_metrics": {
+        "readability": 0.8867035746059155,
+        "modularity": 0.2047425868128682
+      }
+    },
+    {
+      "agent": "OpenHandsPy",
+      "path": "OpenHandsPy/gse149440_optimized.py",
+      "language": "python",
+      "size_bytes": 13406,
+      "loc": 349,
+      "comment_ratio": 0.103,
+      "blank_ratio": 0.203,
+      "heuristic_score": 2.15,
+      "llm_metrics": {
+        "readability": 0.8336133316616051,
+        "modularity": 0.7125907355965708
+      }
+    },
+    {
+      "agent": "OpenHandsPy",
+      "path": "OpenHandsPy/gse149440_analysis.py",
+      "language": "python",
+      "size_bytes": 9931,
+      "loc": 265,
+      "comment_ratio": 0.117,
+      "blank_ratio": 0.215,
+      "heuristic_score": 2.52,
+      "llm_metrics": {
+        "readability": 0.8658547053318764,
+        "modularity": 0.694930915566381
+      }
+    },
+    {
+      "agent": "OpenHandsPy",
+      "path": "OpenHandsPy/gse149440_enhanced.py.py",
+      "language": "python",
+      "size_bytes": 14942,
+      "loc": 413,
+      "comment_ratio": 0.082,
+      "blank_ratio": 0.189,
+      "heuristic_score": 1.94,
+      "llm_metrics": {
+        "readability": 0.8904650528031501,
+        "modularity": 0.4800750041812412
+      }
+    },
+    {
+      "agent": "RooCode",
+      "path": "RooCode/gestational_age_prediction_optimized.R",
+      "language": "r",
+      "size_bytes": 12908,
+      "loc": 396,
+      "comment_ratio": 0.109,
+      "blank_ratio": 0.172,
+      "heuristic_score": 2.05,
+      "llm_metrics": {
+        "readability": 0.8904650540884935,
+        "modularity": 0.5307286317208023
+      }
+    },
+    {
+      "agent": "RooCode",
+      "path": "RooCode/gestational_age_prediction_robust.R",
+      "language": "r",
+      "size_bytes": 9688,
+      "loc": 292,
+      "comment_ratio": 0.11,
+      "blank_ratio": 0.192,
+      "heuristic_score": 2.39,
+      "llm_metrics": {
+        "readability": 0.8463566653481106,
+        "modularity": 0.5511984345691092
+      }
+    },
+    {
+      "agent": "RooCode",
+      "path": "RooCode/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 7820,
+      "loc": 248,
+      "comment_ratio": 0.145,
+      "blank_ratio": 0.21,
+      "heuristic_score": 2.69,
+      "llm_metrics": {
+        "readability": 0.8946596673778231,
+        "modularity": 0.3357666015114135
+      }
+    },
+    {
+      "agent": "RooCode",
+      "path": "RooCode/test_r.R",
+      "language": "r",
+      "size_bytes": 111,
+      "loc": 4,
+      "comment_ratio": 0.25,
+      "blank_ratio": 0.0,
+      "heuristic_score": 3.5,
+      "llm_metrics": {
+        "readability": 0.8136295675104119,
+        "modularity": 0.09859363729954954
+      }
+    },
+    {
+      "agent": "RooCodePy",
+      "path": "RooCodePy/test_geo_download.py",
+      "language": "python",
+      "size_bytes": 1668,
+      "loc": 60,
+      "comment_ratio": 0.067,
+      "blank_ratio": 0.2,
+      "heuristic_score": 2.93,
+      "llm_metrics": {
+        "readability": 0.9182425526028812,
+        "modularity": 0.43257341638793834
+      }
+    },
+    {
+      "agent": "RooCodePy",
+      "path": "RooCodePy/gse149440_analysis.py",
+      "language": "python",
+      "size_bytes": 13762,
+      "loc": 390,
+      "comment_ratio": 0.113,
+      "blank_ratio": 0.231,
+      "heuristic_score": 2.02,
+      "llm_metrics": {
+        "readability": 0.8641040562969058,
+        "modularity": 0.5937277678980755
+      }
+    },
+    {
+      "agent": "RovoDev",
+      "path": "RovoDev/final_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 12098,
+      "loc": 332,
+      "comment_ratio": 0.093,
+      "blank_ratio": 0.175,
+      "heuristic_score": 2.21,
+      "llm_metrics": {
+        "readability": 0.8480918736858847,
+        "modularity": 0.24378234991142017
+      }
+    },
+    {
+      "agent": "RovoDev",
+      "path": "RovoDev/enhanced_gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 12340,
+      "loc": 366,
+      "comment_ratio": 0.107,
+      "blank_ratio": 0.172,
+      "heuristic_score": 2.13,
+      "llm_metrics": {
+        "readability": 0.8939913346459745,
+        "modularity": 0.2562176500885799
+      }
+    },
+    {
+      "agent": "RovoDev",
+      "path": "RovoDev/advanced_deep_learning_prediction.R",
+      "language": "r",
+      "size_bytes": 18494,
+      "loc": 503,
+      "comment_ratio": 0.111,
+      "blank_ratio": 0.177,
+      "heuristic_score": 1.84,
+      "llm_metrics": {
+        "readability": 0.808769432485575,
+        "modularity": 0.20758581742757967
+      }
+    },
+    {
+      "agent": "RovoDev",
+      "path": "RovoDev/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 5887,
+      "loc": 182,
+      "comment_ratio": 0.148,
+      "blank_ratio": 0.209,
+      "heuristic_score": 3.09,
+      "llm_metrics": {
+        "readability": 0.9095349466184454,
+        "modularity": 0.24378234991142017
+      }
+    },
+    {
+      "agent": "RovoDevPy",
+      "path": "RovoDevPy/gestational_age_prediction_complete.py",
+      "language": "python",
+      "size_bytes": 11153,
+      "loc": 288,
+      "comment_ratio": 0.125,
+      "blank_ratio": 0.222,
+      "heuristic_score": 2.41,
+      "llm_metrics": {
+        "readability": 0.7729895824059655,
+        "modularity": 0.6636301839279595
+      }
+    }
+  ],
+  "used_llm": true,
+  "llm_metric_names": [
+    "readability",
+    "modularity"
+  ]
+}

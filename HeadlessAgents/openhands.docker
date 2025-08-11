@@ -1,0 +1,17 @@
+## OpenHands headless agent image
+# Reference: https://docs.all-hands.dev/usage/how-to/headless-mode
+FROM docker.all-hands.dev/all-hands-ai/openhands:0.51
+
+USER root
+RUN mkdir -p /workspace /results && chown -R 1000:1000 /workspace /results
+USER 1000
+
+COPY openhands_run.sh /usr/local/bin/openhands_run.sh
+RUN chmod +x /usr/local/bin/openhands_run.sh
+
+ENV MAX_TURNS=40 \
+    LLM_MODEL="anthropic/claude-sonnet-4-20250514" \
+    LOG_ALL_EVENTS=true
+
+WORKDIR /workspace
+ENTRYPOINT ["/usr/local/bin/openhands_run.sh"]

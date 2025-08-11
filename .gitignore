@@ -1,0 +1,21 @@
+*.RData
+*gz
+__pycache__
+BeastModev3/gse149440_expr_meta.RData
+BeastModev3/gse149440_expressionSet.RData
+BeastModev3/gse149440_model_data.RData
+BeastModev3/gse149440_model_results.RData
+BeastModev3/gse149440_preprocessed.RData
+BeastModev3Py/chat.json
+BeastModev3Py/GSE149440_family.soft.gz
+BeastModev3Py/expression_gse149440.csv
+ClinePy/GSE149440_family.soft.gz
+Cursor/GSE149440_series_matrix.txt.gz
+Cursor/GPL28460.soft.gz
+CursorPy/GSE149440_family.soft.gz
+data/GSE149440_family.soft.gz
+KiroPy/data/GSE149440_family.soft.gz
+OpenHandsPy/gestational_age_enhanced copy 2.jpg
+RooCodePy/data/GSE149440_family.soft.gz
+RovoDevPy/optimized_gestational_age_results.png
+RovoDevPy/GSE149440_family.soft.gz

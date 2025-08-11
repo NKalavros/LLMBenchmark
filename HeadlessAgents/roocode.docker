@@ -1,0 +1,11 @@
+## RooCode adapter (experimental)
+FROM codercom/code-server:latest
+USER root
+RUN apt-get update && apt-get install -y git bash curl jq pnpm && rm -rf /var/lib/apt/lists/*
+USER coder
+WORKDIR /home/coder
+RUN git clone https://github.com/cte/roo-cli /home/coder/roo-cli || echo "roo-cli placeholder"
+COPY roocode_run.sh /usr/local/bin/roocode_run.sh
+RUN chmod +x /usr/local/bin/roocode_run.sh
+ENV PROMPT="" MAX_TURNS=25
+ENTRYPOINT ["/usr/local/bin/roocode_run.sh"]

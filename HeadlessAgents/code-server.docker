@@ -1,0 +1,10 @@
+## Baseline code-server image (control)
+FROM codercom/code-server:latest
+USER root
+RUN apt-get update && apt-get install -y git bash jq && rm -rf /var/lib/apt/lists/*
+USER coder
+WORKDIR /home/coder
+COPY baseline_run.sh /usr/local/bin/baseline_run.sh
+RUN chmod +x /usr/local/bin/baseline_run.sh
+ENV PROMPT=""
+ENTRYPOINT ["/usr/local/bin/baseline_run.sh"]

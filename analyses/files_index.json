@@ -1,0 +1,356 @@
+{
+  "agents": [
+    "BeastModev3",
+    "BeastModev3Py",
+    "ClaudeCode",
+    "Cline",
+    "ClinePy",
+    "Cursor",
+    "CursorPy",
+    "Kiro",
+    "KiroPy",
+    "OpenHandsPy",
+    "RooCode",
+    "RooCodePy",
+    "RovoDev",
+    "RovoDevPy"
+  ],
+  "files": [
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_extract.R",
+      "language": "r",
+      "size_bytes": 754,
+      "loc": 25
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_preprocess.R",
+      "language": "r",
+      "size_bytes": 764,
+      "loc": 24
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_evaluate_plot.R",
+      "language": "r",
+      "size_bytes": 1242,
+      "loc": 34
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_download.R",
+      "language": "r",
+      "size_bytes": 624,
+      "loc": 19
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_model_fit.R",
+      "language": "r",
+      "size_bytes": 1956,
+      "loc": 66
+    },
+    {
+      "agent": "BeastModev3",
+      "path": "BeastModev3/gse149440_metadata_check.R",
+      "language": "r",
+      "size_bytes": 763,
+      "loc": 24
+    },
+    {
+      "agent": "BeastModev3Py",
+      "path": "BeastModev3Py/predict_gestational_age.py",
+      "language": "python",
+      "size_bytes": 4532,
+      "loc": 128
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/optimized_gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 12054,
+      "loc": 347
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/optimized_gestational_age_v2.R",
+      "language": "r",
+      "size_bytes": 15473,
+      "loc": 420
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/best_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 14466,
+      "loc": 394
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/final_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 11640,
+      "loc": 351
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 6035,
+      "loc": 193
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/efficient_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 8249,
+      "loc": 256
+    },
+    {
+      "agent": "ClaudeCode",
+      "path": "ClaudeCode/advanced_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 13682,
+      "loc": 398
+    },
+    {
+      "agent": "Cline",
+      "path": "Cline/optimized_gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 9753,
+      "loc": 285
+    },
+    {
+      "agent": "Cline",
+      "path": "Cline/install_packages.R",
+      "language": "r",
+      "size_bytes": 431,
+      "loc": 16
+    },
+    {
+      "agent": "Cline",
+      "path": "Cline/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 5550,
+      "loc": 166
+    },
+    {
+      "agent": "ClinePy",
+      "path": "ClinePy/gestational_age_predictor.py",
+      "language": "python",
+      "size_bytes": 13820,
+      "loc": 341
+    },
+    {
+      "agent": "ClinePy",
+      "path": "ClinePy/examine_metadata.py",
+      "language": "python",
+      "size_bytes": 939,
+      "loc": 32
+    },
+    {
+      "agent": "ClinePy",
+      "path": "ClinePy/gestational_age_predictor_v2.py",
+      "language": "python",
+      "size_bytes": 17975,
+      "loc": 466
+    },
+    {
+      "agent": "ClinePy",
+      "path": "ClinePy/gestational_age_predictor_final.py",
+      "language": "python",
+      "size_bytes": 14773,
+      "loc": 379
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/optimized_gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 18756,
+      "loc": 626
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/create_results_csv.R",
+      "language": "r",
+      "size_bytes": 441,
+      "loc": 12
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/final_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 12987,
+      "loc": 427
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/simple_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 11526,
+      "loc": 389
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/final_results.R",
+      "language": "r",
+      "size_bytes": 2212,
+      "loc": 68
+    },
+    {
+      "agent": "Cursor",
+      "path": "Cursor/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 10137,
+      "loc": 344
+    },
+    {
+      "agent": "CursorPy",
+      "path": "CursorPy/gestational_age_prediction_optimized.py",
+      "language": "python",
+      "size_bytes": 14936,
+      "loc": 405
+    },
+    {
+      "agent": "CursorPy",
+      "path": "CursorPy/check_metadata.py",
+      "language": "python",
+      "size_bytes": 1305,
+      "loc": 42
+    },
+    {
+      "agent": "CursorPy",
+      "path": "CursorPy/gestational_age_prediction.py",
+      "language": "python",
+      "size_bytes": 8748,
+      "loc": 269
+    },
+    {
+      "agent": "CursorPy",
+      "path": "CursorPy/debug_dataset.py",
+      "language": "python",
+      "size_bytes": 4754,
+      "loc": 113
+    },
+    {
+      "agent": "Kiro",
+      "path": "Kiro/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 7141,
+      "loc": 207
+    },
+    {
+      "agent": "KiroPy",
+      "path": "KiroPy/gse149440_optimized.py",
+      "language": "python",
+      "size_bytes": 15587,
+      "loc": 440
+    },
+    {
+      "agent": "KiroPy",
+      "path": "KiroPy/gse149440_analysis.py",
+      "language": "python",
+      "size_bytes": 10418,
+      "loc": 298
+    },
+    {
+      "agent": "OpenHandsPy",
+      "path": "OpenHandsPy/gse149440_optimized.py",
+      "language": "python",
+      "size_bytes": 13406,
+      "loc": 349
+    },
+    {
+      "agent": "OpenHandsPy",
+      "path": "OpenHandsPy/gse149440_analysis.py",
+      "language": "python",
+      "size_bytes": 9931,
+      "loc": 265
+    },
+    {
+      "agent": "OpenHandsPy",
+      "path": "OpenHandsPy/gse149440_enhanced.py.py",
+      "language": "python",
+      "size_bytes": 14942,
+      "loc": 413
+    },
+    {
+      "agent": "RooCode",
+      "path": "RooCode/gestational_age_prediction_optimized.R",
+      "language": "r",
+      "size_bytes": 12908,
+      "loc": 396
+    },
+    {
+      "agent": "RooCode",
+      "path": "RooCode/gestational_age_prediction_robust.R",
+      "language": "r",
+      "size_bytes": 9688,
+      "loc": 292
+    },
+    {
+      "agent": "RooCode",
+      "path": "RooCode/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 7820,
+      "loc": 248
+    },
+    {
+      "agent": "RooCode",
+      "path": "RooCode/test_r.R",
+      "language": "r",
+      "size_bytes": 111,
+      "loc": 4
+    },
+    {
+      "agent": "RooCodePy",
+      "path": "RooCodePy/test_geo_download.py",
+      "language": "python",
+      "size_bytes": 1668,
+      "loc": 60
+    },
+    {
+      "agent": "RooCodePy",
+      "path": "RooCodePy/gse149440_analysis.py",
+      "language": "python",
+      "size_bytes": 13762,
+      "loc": 390
+    },
+    {
+      "agent": "RovoDev",
+      "path": "RovoDev/final_optimized_prediction.R",
+      "language": "r",
+      "size_bytes": 12098,
+      "loc": 332
+    },
+    {
+      "agent": "RovoDev",
+      "path": "RovoDev/enhanced_gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 12340,
+      "loc": 366
+    },
+    {
+      "agent": "RovoDev",
+      "path": "RovoDev/advanced_deep_learning_prediction.R",
+      "language": "r",
+      "size_bytes": 18494,
+      "loc": 503
+    },
+    {
+      "agent": "RovoDev",
+      "path": "RovoDev/gestational_age_prediction.R",
+      "language": "r",
+      "size_bytes": 5887,
+      "loc": 182
+    },
+    {
+      "agent": "RovoDevPy",
+      "path": "RovoDevPy/gestational_age_prediction_complete.py",
+      "language": "python",
+      "size_bytes": 11153,
+      "loc": 288
+    }
+  ]
+}

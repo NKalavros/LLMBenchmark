@@ -1,0 +1,12 @@
+## Cline adapter via code-server (experimental)
+FROM codercom/code-server:latest
+USER root
+RUN apt-get update && apt-get install -y git bash curl jq && rm -rf /var/lib/apt/lists/*
+USER coder
+WORKDIR /home/coder
+ARG CLINE_EXTENSION_ID=cline.cline
+RUN code-server --install-extension ${CLINE_EXTENSION_ID} || echo "Adjust CLINE_EXTENSION_ID if invalid"
+COPY cline_run.sh /usr/local/bin/cline_run.sh
+RUN chmod +x /usr/local/bin/cline_run.sh
+ENV PROMPT="" MAX_TURNS=25
+ENTRYPOINT ["/usr/local/bin/cline_run.sh"]

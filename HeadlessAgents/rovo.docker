@@ -1,0 +1,35 @@
+## Rovo Dev CLI agent image
+# Installs Atlassian ACLI (acli) and sets up a non-interactive harness for Rovo Dev.
+# Non-interactive instructions: acli rovodev run "<instruction>" (modifies repo directly).
+# Interactive mode (acli rovodev run) is NOT suitable for headless automation; we block it by default.
+FROM debian:bookworm-slim
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	ca-certificates git curl bash jq wget gnupg2 coreutils procps diffutils \
+	&& rm -rf /var/lib/apt/lists/*
+
+WORKDIR /agent
+
+# Install ACLI via direct binary (simpler & faster than adding apt repo inside minimal image)
+ARG ACLI_BIN_URL="https://acli.atlassian.com/linux/latest/acli_linux_amd64/acli"
+RUN curl -fsSL "$ACLI_BIN_URL" -o /usr/local/bin/acli && chmod +x /usr/local/bin/acli \
+	&& /usr/local/bin/acli --version || echo "(ACLI version check skipped if network blocked)"
+
+# Create a dedicated user (least privilege)
+RUN useradd -m -u 1000 rovo && mkdir -p /workspace /results /state && chown -R rovo:rovo /workspace /results /state
+USER rovo
+WORKDIR /workspace
+
+# Copy run harness
+COPY rovo_run.sh /usr/local/bin/rovo_run.sh
+RUN chmod +x /usr/local/bin/rovo_run.sh
+
+# Environment variables:
+# PROMPT / ROVO_PROMPT: instruction for non-interactive mode
+# ROVO_MODE: noninteractive|interactive (interactive blocked by default)
+# ROVO_SITE, ROVO_EMAIL, ROVO_API_TOKEN: (OPTIONAL) if future non-interactive auth becomes scriptable
+ENV PROMPT="" ROVO_PROMPT="" ROVO_MODE=noninteractive ROVO_VERBOSE=1 ROVO_ALLOW_INTERACTIVE=0
+
+# Persist ACLI config & sessions by mounting /home/rovo/.acli externally (user supplies volume)
+ENTRYPOINT ["/usr/local/bin/rovo_run.sh"]
