@@ -1,0 +1,342 @@
+{
+  "clusters": [
+    {
+      "cluster_id": 0,
+      "size": 6,
+      "representative": "ClinePy/gestational_age_predictor_v2.py",
+      "agents": [
+        "BeastModev3",
+        "BeastModev3Py",
+        "ClinePy"
+      ],
+      "agent_count": 3,
+      "agent_diversity": 0.5,
+      "modeling_approaches": [
+        "linear_regression"
+      ],
+      "modeling_approach_count": 1,
+      "avg_loc": 226.33333333333334,
+      "avg_size_bytes": 8746.333333333334,
+      "avg_intra_similarity": 0.808549273612805,
+      "files": [
+        "BeastModev3/gse149440_extract.R",
+        "BeastModev3/gse149440_download.R",
+        "BeastModev3Py/predict_gestational_age.py",
+        "ClinePy/gestational_age_predictor.py",
+        "ClinePy/gestational_age_predictor_v2.py",
+        "ClinePy/gestational_age_predictor_final.py"
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "size": 21,
+      "representative": "Kiro/gestational_age_prediction.R",
+      "agents": [
+        "BeastModev3",
+        "ClaudeCode",
+        "Cline",
+        "Cursor",
+        "CursorPy",
+        "Kiro",
+        "KiroPy",
+        "OpenHandsPy",
+        "RooCode",
+        "RooCodePy",
+        "RovoDev",
+        "RovoDevPy"
+      ],
+      "agent_count": 12,
+      "agent_diversity": 0.5714285714285714,
+      "modeling_approaches": [
+        "elastic_net",
+        "linear_regression",
+        "random_forest"
+      ],
+      "modeling_approach_count": 3,
+      "avg_loc": 251.52380952380952,
+      "avg_size_bytes": 8491.57142857143,
+      "avg_intra_similarity": 0.8002602993677609,
+      "files": [
+        "BeastModev3/gse149440_preprocess.R",
+        "BeastModev3/gse149440_metadata_check.R",
+        "ClaudeCode/gestational_age_prediction.R",
+        "ClaudeCode/efficient_optimized_prediction.R",
+        "Cline/gestational_age_prediction.R",
+        "Cursor/final_optimized_prediction.R",
+        "Cursor/simple_optimized_prediction.R",
+        "Cursor/final_results.R",
+        "Cursor/gestational_age_prediction.R",
+        "CursorPy/check_metadata.py",
+        "CursorPy/gestational_age_prediction.py",
+        "Kiro/gestational_age_prediction.R",
+        "KiroPy/gse149440_optimized.py",
+        "KiroPy/gse149440_analysis.py",
+        "OpenHandsPy/gse149440_optimized.py",
+        "OpenHandsPy/gse149440_analysis.py",
+        "OpenHandsPy/gse149440_enhanced.py.py",
+        "RooCode/gestational_age_prediction.R",
+        "RooCodePy/gse149440_analysis.py",
+        "RovoDev/gestational_age_prediction.R",
+        "RovoDevPy/gestational_age_prediction_complete.py"
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "size": 5,
+      "representative": "Cursor/optimized_gestational_age_prediction.R",
+      "agents": [
+        "BeastModev3",
+        "Cursor",
+        "RooCode"
+      ],
+      "agent_count": 3,
+      "agent_diversity": 0.6,
+      "modeling_approaches": [
+        "elastic_net",
+        "random_forest"
+      ],
+      "modeling_approach_count": 2,
+      "avg_loc": 148.4,
+      "avg_size_bytes": 4501.2,
+      "avg_intra_similarity": 0.6091045077300388,
+      "files": [
+        "BeastModev3/gse149440_evaluate_plot.R",
+        "BeastModev3/gse149440_model_fit.R",
+        "Cursor/optimized_gestational_age_prediction.R",
+        "Cursor/create_results_csv.R",
+        "RooCode/test_r.R"
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "size": 16,
+      "representative": "ClaudeCode/optimized_gestational_age_prediction.R",
+      "agents": [
+        "ClaudeCode",
+        "Cline",
+        "ClinePy",
+        "CursorPy",
+        "RooCode",
+        "RooCodePy",
+        "RovoDev"
+      ],
+      "agent_count": 7,
+      "agent_diversity": 0.4375,
+      "modeling_approaches": [
+        "random_forest"
+      ],
+      "modeling_approach_count": 1,
+      "avg_loc": 294.375,
+      "avg_size_bytes": 10332.75,
+      "avg_intra_similarity": 0.7313009556400875,
+      "files": [
+        "ClaudeCode/optimized_gestational_age_prediction.R",
+        "ClaudeCode/optimized_gestational_age_v2.R",
+        "ClaudeCode/best_optimized_prediction.R",
+        "ClaudeCode/final_optimized_prediction.R",
+        "ClaudeCode/advanced_optimized_prediction.R",
+        "Cline/optimized_gestational_age_prediction.R",
+        "Cline/install_packages.R",
+        "ClinePy/examine_metadata.py",
+        "CursorPy/gestational_age_prediction_optimized.py",
+        "CursorPy/debug_dataset.py",
+        "RooCode/gestational_age_prediction_optimized.R",
+        "RooCode/gestational_age_prediction_robust.R",
+        "RooCodePy/test_geo_download.py",
+        "RovoDev/final_optimized_prediction.R",
+        "RovoDev/enhanced_gestational_age_prediction.R",
+        "RovoDev/advanced_deep_learning_prediction.R"
+      ]
+    }
+  ],
+  "n_clusters": 4,
+  "embedding_source": "embedding_preview",
+  "n_files": 48,
+  "silhouette": 0.15123400219229924,
+  "hierarchical": {
+    "levels": [
+      {
+        "k": 2,
+        "clusters": {
+          "0": [
+            "BeastModev3/gse149440_extract.R",
+            "BeastModev3/gse149440_preprocess.R",
+            "BeastModev3/gse149440_download.R",
+            "BeastModev3/gse149440_metadata_check.R",
+            "BeastModev3Py/predict_gestational_age.py",
+            "ClaudeCode/gestational_age_prediction.R",
+            "ClaudeCode/efficient_optimized_prediction.R",
+            "Cline/optimized_gestational_age_prediction.R",
+            "Cline/gestational_age_prediction.R",
+            "ClinePy/gestational_age_predictor.py",
+            "ClinePy/examine_metadata.py",
+            "ClinePy/gestational_age_predictor_v2.py",
+            "ClinePy/gestational_age_predictor_final.py",
+            "Cursor/final_optimized_prediction.R",
+            "Cursor/simple_optimized_prediction.R",
+            "Cursor/final_results.R",
+            "Cursor/gestational_age_prediction.R",
+            "CursorPy/check_metadata.py",
+            "CursorPy/gestational_age_prediction.py",
+            "CursorPy/debug_dataset.py",
+            "Kiro/gestational_age_prediction.R",
+            "KiroPy/gse149440_analysis.py",
+            "OpenHandsPy/gse149440_optimized.py",
+            "OpenHandsPy/gse149440_analysis.py",
+            "OpenHandsPy/gse149440_enhanced.py.py",
+            "RooCode/gestational_age_prediction.R",
+            "RooCodePy/test_geo_download.py",
+            "RooCodePy/gse149440_analysis.py",
+            "RovoDev/gestational_age_prediction.R",
+            "RovoDevPy/gestational_age_prediction_complete.py"
+          ],
+          "1": [
+            "BeastModev3/gse149440_evaluate_plot.R",
+            "BeastModev3/gse149440_model_fit.R",
+            "ClaudeCode/optimized_gestational_age_prediction.R",
+            "ClaudeCode/optimized_gestational_age_v2.R",
+            "ClaudeCode/best_optimized_prediction.R",
+            "ClaudeCode/final_optimized_prediction.R",
+            "ClaudeCode/advanced_optimized_prediction.R",
+            "Cline/install_packages.R",
+            "Cursor/optimized_gestational_age_prediction.R",
+            "Cursor/create_results_csv.R",
+            "CursorPy/gestational_age_prediction_optimized.py",
+            "KiroPy/gse149440_optimized.py",
+            "RooCode/gestational_age_prediction_optimized.R",
+            "RooCode/gestational_age_prediction_robust.R",
+            "RooCode/test_r.R",
+            "RovoDev/final_optimized_prediction.R",
+            "RovoDev/enhanced_gestational_age_prediction.R",
+            "RovoDev/advanced_deep_learning_prediction.R"
+          ]
+        }
+      },
+      {
+        "k": 4,
+        "clusters": {
+          "2": [
+            "BeastModev3/gse149440_extract.R",
+            "BeastModev3/gse149440_preprocess.R",
+            "BeastModev3/gse149440_download.R",
+            "BeastModev3/gse149440_metadata_check.R",
+            "ClinePy/examine_metadata.py",
+            "CursorPy/check_metadata.py",
+            "CursorPy/debug_dataset.py",
+            "RooCodePy/test_geo_download.py"
+          ],
+          "1": [
+            "BeastModev3/gse149440_evaluate_plot.R",
+            "BeastModev3/gse149440_model_fit.R",
+            "ClaudeCode/optimized_gestational_age_prediction.R",
+            "ClaudeCode/optimized_gestational_age_v2.R",
+            "ClaudeCode/best_optimized_prediction.R",
+            "ClaudeCode/final_optimized_prediction.R",
+            "ClaudeCode/advanced_optimized_prediction.R",
+            "Cursor/optimized_gestational_age_prediction.R",
+            "Cursor/create_results_csv.R",
+            "CursorPy/gestational_age_prediction_optimized.py",
+            "KiroPy/gse149440_optimized.py",
+            "RooCode/gestational_age_prediction_optimized.R",
+            "RooCode/gestational_age_prediction_robust.R",
+            "RovoDev/final_optimized_prediction.R",
+            "RovoDev/enhanced_gestational_age_prediction.R",
+            "RovoDev/advanced_deep_learning_prediction.R"
+          ],
+          "0": [
+            "BeastModev3Py/predict_gestational_age.py",
+            "ClaudeCode/gestational_age_prediction.R",
+            "ClaudeCode/efficient_optimized_prediction.R",
+            "Cline/optimized_gestational_age_prediction.R",
+            "Cline/gestational_age_prediction.R",
+            "ClinePy/gestational_age_predictor.py",
+            "ClinePy/gestational_age_predictor_v2.py",
+            "ClinePy/gestational_age_predictor_final.py",
+            "Cursor/final_optimized_prediction.R",
+            "Cursor/simple_optimized_prediction.R",
+            "Cursor/final_results.R",
+            "Cursor/gestational_age_prediction.R",
+            "CursorPy/gestational_age_prediction.py",
+            "Kiro/gestational_age_prediction.R",
+            "KiroPy/gse149440_analysis.py",
+            "OpenHandsPy/gse149440_optimized.py",
+            "OpenHandsPy/gse149440_analysis.py",
+            "OpenHandsPy/gse149440_enhanced.py.py",
+            "RooCode/gestational_age_prediction.R",
+            "RooCodePy/gse149440_analysis.py",
+            "RovoDev/gestational_age_prediction.R",
+            "RovoDevPy/gestational_age_prediction_complete.py"
+          ],
+          "3": [
+            "Cline/install_packages.R",
+            "RooCode/test_r.R"
+          ]
+        }
+      },
+      {
+        "k": 5,
+        "clusters": {
+          "2": [
+            "BeastModev3/gse149440_extract.R",
+            "BeastModev3/gse149440_preprocess.R",
+            "BeastModev3/gse149440_download.R",
+            "BeastModev3/gse149440_metadata_check.R",
+            "ClinePy/examine_metadata.py",
+            "CursorPy/check_metadata.py",
+            "CursorPy/debug_dataset.py",
+            "RooCodePy/test_geo_download.py"
+          ],
+          "1": [
+            "BeastModev3/gse149440_evaluate_plot.R",
+            "BeastModev3/gse149440_model_fit.R",
+            "ClaudeCode/optimized_gestational_age_prediction.R",
+            "ClaudeCode/optimized_gestational_age_v2.R",
+            "ClaudeCode/best_optimized_prediction.R",
+            "ClaudeCode/final_optimized_prediction.R",
+            "ClaudeCode/advanced_optimized_prediction.R",
+            "Cursor/optimized_gestational_age_prediction.R",
+            "Cursor/create_results_csv.R",
+            "CursorPy/gestational_age_prediction_optimized.py",
+            "KiroPy/gse149440_optimized.py",
+            "RooCode/gestational_age_prediction_optimized.R",
+            "RooCode/gestational_age_prediction_robust.R",
+            "RovoDev/final_optimized_prediction.R",
+            "RovoDev/enhanced_gestational_age_prediction.R",
+            "RovoDev/advanced_deep_learning_prediction.R"
+          ],
+          "0": [
+            "BeastModev3Py/predict_gestational_age.py",
+            "ClinePy/gestational_age_predictor.py",
+            "ClinePy/gestational_age_predictor_v2.py",
+            "ClinePy/gestational_age_predictor_final.py",
+            "CursorPy/gestational_age_prediction.py",
+            "KiroPy/gse149440_analysis.py",
+            "OpenHandsPy/gse149440_optimized.py",
+            "OpenHandsPy/gse149440_analysis.py",
+            "OpenHandsPy/gse149440_enhanced.py.py",
+            "RooCodePy/gse149440_analysis.py",
+            "RovoDevPy/gestational_age_prediction_complete.py"
+          ],
+          "4": [
+            "ClaudeCode/gestational_age_prediction.R",
+            "ClaudeCode/efficient_optimized_prediction.R",
+            "Cline/optimized_gestational_age_prediction.R",
+            "Cline/gestational_age_prediction.R",
+            "Cursor/final_optimized_prediction.R",
+            "Cursor/simple_optimized_prediction.R",
+            "Cursor/final_results.R",
+            "Cursor/gestational_age_prediction.R",
+            "Kiro/gestational_age_prediction.R",
+            "RooCode/gestational_age_prediction.R",
+            "RovoDev/gestational_age_prediction.R"
+          ],
+          "3": [
+            "Cline/install_packages.R",
+            "RooCode/test_r.R"
+          ]
+        }
+      }
+    ],
+    "method": "ward"
+  }
+}

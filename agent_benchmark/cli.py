@@ -11,6 +11,7 @@ from .core.evaluate import evaluate_models
 from .core.quality import quality_scores
 from .core.report import build_report
 from .core.cluster import cluster_codebase
+from .core.plots import generate_plots
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -18,7 +19,7 @@ def build_parser() -> argparse.ArgumentParser:
         prog="agent-benchmark",
         description="Semantic + performance benchmarking across agent-generated code",
     )
-    p.add_argument("command", choices=["discover", "analyze", "evaluate", "quality", "cluster", "report"], help="Action to run")
+    p.add_argument("command", choices=["discover", "analyze", "evaluate", "quality", "cluster", "plots", "report"], help="Action to run")
     p.add_argument("--root", default=".", help="Root directory containing agent folders")
     p.add_argument("--outdir", default="analyses", help="Directory to write artifacts")
     p.add_argument("--agent-filter", nargs="*", help="Subset of agent folder names to include")
@@ -59,6 +60,8 @@ def main(argv=None):  # pragma: no cover - thin wrapper
         quality_scores(root, outdir, agent_filter=args.agent_filter, mock=args.mock_llm)
     elif args.command == "cluster":
         cluster_codebase(outdir)
+    elif args.command == "plots":
+        generate_plots(outdir)
     elif args.command == "report":
         build_report(outdir)
     else:  # pragma: no cover - argparse prevents

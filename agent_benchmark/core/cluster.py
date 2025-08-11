@@ -48,7 +48,7 @@ def cluster_codebase(outdir: Path, n_clusters: Optional[int] = None):
     if n == 0:  # pragma: no cover - defensive
         raise SystemExit("No embeddings available for clustering")
     if n == 1:
-        clusters = [{
+        single_cluster = [{
             "cluster_id": 0,
             "files": [kept_files[0]['path']],
             "size": 1,
@@ -56,7 +56,7 @@ def cluster_codebase(outdir: Path, n_clusters: Optional[int] = None):
             "agents": [kept_files[0]['agent']],
             "modeling_approaches": list(filter(None, [kept_files[0].get('modeling_approach')]))
         }]
-        out = {"clusters": clusters, "n_clusters": 1, "embedding_source": embed_key, "n_files": 1}
+        out = {"clusters": single_cluster, "n_clusters": 1, "embedding_source": embed_key, "n_files": 1}
         (outdir / 'clusters.json').write_text(json.dumps(out, indent=2))
         return out
 
@@ -125,12 +125,50 @@ def cluster_codebase(outdir: Path, n_clusters: Optional[int] = None):
         import seaborn as sns  # type: ignore
         sns.set_context('paper')
         max_show = min(40, sim_matrix.shape[0])
-        plt.figure(figsize=(min(12, max_show/3+2), min(10, max_show/3+2)))
-        sns.heatmap(sim_matrix[:max_show, :max_show], cmap='viridis', cbar=True)
+
+        # Build short, unique labels for displayed files
+        shown_paths = [f['path'] for f in kept_files[:max_show]]
+        basenames = [Path(p).name for p in shown_paths]
+        # Disambiguate duplicate basenames by prefixing parent directory
+        duplicates = {name for name in basenames if basenames.count(name) > 1}
+        short_labels = []
+        for p, base in zip(shown_paths, basenames):
+            if base in duplicates:
+                parent = Path(p).parent.name
+                short_labels.append(f"{parent}/{base}")
+            else:
+                short_labels.append(base)
+
+        # Further trim very long labels
+        def trim(label: str, limit: int = 28) -> str:
+            return label if len(label) <= limit else label[:limit-3] + '…'
+
+        display_labels = [trim(l) for l in short_labels]
+
+        fig_w = min(14, max(6, 0.4 * max_show + 2))
+        fig_h = min(14, max(4, 0.35 * max_show + 2))
+        plt.figure(figsize=(fig_w, fig_h))
+        sns.heatmap(
+            sim_matrix[:max_show, :max_show],
+            cmap='viridis',
+            cbar=True,
+            xticklabels=display_labels,
+            yticklabels=display_labels,
+            square=False
+        )
         plt.title('Code Similarity (cosine)')
+        plt.xticks(rotation=60, ha='right', fontsize=8)
+        plt.yticks(fontsize=8)
         plt.tight_layout()
         plt.savefig(outdir / 'similarity_heatmap.png', dpi=150)
         plt.close()
+
+        # Save mapping of displayed labels to full paths for reference
+        try:
+            mapping_lines = ["index,short_label,full_path"] + [f"{i},{display_labels[i]},{shown_paths[i]}" for i in range(len(display_labels))]
+            (outdir / 'similarity_heatmap_labels.csv').write_text("\n".join(mapping_lines))
+        except Exception:  # pragma: no cover
+            pass
     except Exception:  # pragma: no cover
         pass
 

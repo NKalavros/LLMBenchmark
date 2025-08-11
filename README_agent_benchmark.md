@@ -9,6 +9,7 @@ This adds an initial benchmarking toolkit (`agent_benchmark`) to:
 5. Assemble a simple markdown report.
 6. Cluster code by embedding similarity & generate a heatmap.
 7. Provide advanced clustering analytics: per-cluster stats (avg LOC, size, intra-cluster similarity, agent diversity), silhouette score, and hierarchical (Ward) multi‑k summaries.
+8. Generate comparative visualization plots (quality distributions, LLM metric relationships, cluster characteristics).
 
 ## Usage
 
@@ -24,6 +25,7 @@ Run the pipeline (mock / offline mode):
 python -m agent_benchmark discover --root .
 python -m agent_benchmark analyze --root . 
 python -m agent_benchmark cluster --root .   # build similarity clusters, stats, heatmap, hierarchy
+python -m agent_benchmark plots --root .     # generate visualization PNGs from analysis artifacts
 python -m agent_benchmark evaluate --root . # Currently does not work because no runs returns CSV files for RMSE.
 python -m agent_benchmark quality --root . 
 python -m agent_benchmark report --root .
@@ -49,6 +51,7 @@ Artifacts land in `analyses/` (configurable with `--outdir`). Key outputs now in
 - `clusters.json` – cluster assignments with stats (agent_diversity, avg_loc, avg_intra_similarity, silhouette, hierarchical levels).
 - `similarity_matrix.npz` – cosine similarity matrix + file list.
 - `similarity_heatmap.png` – visual snapshot of top-N similarity matrix slice.
+- `similarity_heatmap_labels.csv` – mapping of heatmap tick labels to full file paths.
 - `quality_scores.json` – heuristic + optional LLM quality metrics.
 - `rmse_results.json` – (when prediction CSVs present) RMSE values.
 - `report.md` – consolidated human-readable summary.
@@ -74,6 +77,33 @@ The `cluster` command performs:
 - Similarity artifacts: compressed matrix (`similarity_matrix.npz`) and optional heatmap image.
 
 Report excerpts display top clusters (by size) plus silhouette and a brief hierarchical level summary.
+
+## Visualization / Plots
+
+After running `quality` and `cluster`, invoke:
+
+```bash
+python -m agent_benchmark plots --root .
+```
+
+This produces (when underlying data are present):
+
+- `quality_distribution.png` – Histogram (with KDE) of heuristic quality scores.
+- `readability_vs_modularity.png` – Scatter of LLM readability vs modularity per file, colored by agent.
+- `readability_modularity_density.png` – (Large datasets) Hexbin density for readability vs modularity.
+- `agent_quality_boxplot.png` – Distribution of heuristic scores per agent.
+- `agent_avg_metrics.png` – Side‑by‑side bar chart of average readability / modularity per agent.
+- `cluster_size_vs_similarity.png` – Cluster size vs average intra‑cluster similarity scatter (colored by agent diversity).
+- `cluster_agent_diversity.png` – Histogram of agent diversity (unique agents / cluster size).
+- `similarity_heatmap.png` – Now annotated with disambiguated short file labels (if <= 40 files displayed). Full mapping in `similarity_heatmap_labels.csv`.
+
+All plots are written to the same analyses output directory. Plots auto‑skip if required metrics are absent (e.g. no LLM metrics -> skip readability/modularity plots).
+
+### Tips
+
+- Rerun `plots` after re‑running earlier stages; images are overwritten.
+- Adjust the number of files displayed in the heatmap by editing `max_show` inside `cluster.py` if needed for deeper inspection.
+- The density hexbin activates only when ≥ 50 files contain both readability and modularity metrics.
 
 ## Next Steps
 

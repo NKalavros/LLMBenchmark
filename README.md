@@ -1,4 +1,4 @@
-Make sure I gitignore big files with: find . -size +1M | cat >> .gitignore
+Make sure I gitignore big files with: find * -size +1M | cat >> .gitignore
 
 # Agent Benchmark
 
@@ -6,7 +6,7 @@ This adds an initial benchmarking toolkit (`agent_benchmark`) to:
 
 1. Discover code files across agent directories.
 2. Produce semantic summaries (DSPy if available) & embeddings (OpenAI or deterministic hash fallback).
-3. (Skeleton) Evaluate RMSE from existing prediction CSVs.
+3. (Skeleton) Evaluate RMSE from existing prediction CSVs. This does not work yet.
 4. Generate heuristic quality scores plus optional DeepEval (GEval) LLM-based metrics.
 5. Assemble a simple markdown report.
 6. Cluster code by embedding similarity & generate a heatmap.
@@ -14,7 +14,7 @@ This adds an initial benchmarking toolkit (`agent_benchmark`) to:
 
 ## Usage
 
-Install dependencies (optional at this stage; discovery & heuristic analysis rely only on stdlib):
+Install dependencies (Mostly DeepEval and DSPy)
 
 ```bash
 pip install -r requirements.txt
@@ -24,10 +24,11 @@ Run the pipeline (mock / offline mode):
 
 ```bash
 python -m agent_benchmark discover --root .
-python -m agent_benchmark analyze --root . 
+python -m agent_benchmark analyze --root . --store-full-embeddings
 python -m agent_benchmark cluster --root .   # build similarity clusters, stats, heatmap, hierarchy
-python -m agent_benchmark evaluate --root . # Currently does not work because no runs returns CSV files for RMSE.
+python -m agent_benchmark evaluate --root . # Currently does not work because no runs returns CSV files for RMSE. I will remake the prompts for this
 python -m agent_benchmark quality --root . 
+python -m agent_benchmark plots --root . 
 python -m agent_benchmark report --root .
 ```
 
