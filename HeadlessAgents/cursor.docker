@@ -1,16 +1,24 @@
-FROM ubuntu:22.04
+FROM debian:bookworm-slim
 
-# Install curl & bash
-RUN apt-get update && apt-get install -y \
-    curl \
-    bash \
-    && rm -rf /var/lib/apt/lists/*
+# Install minimal dependencies
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Install cursor-cli via official script
+# Use HTTPS mirrors to avoid environments that block plain HTTP (Debian slim uses deb822 sources)
+RUN if [ -f /etc/apt/sources.list.d/debian.sources ]; then \
+			sed -i 's|http://|https://|g' /etc/apt/sources.list.d/debian.sources; \
+		fi \
+ && printf 'Acquire::https::Verify-Peer "false";\nAcquire::https::Verify-Host "false";\n' > /etc/apt/apt.conf.d/99insecure \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends ca-certificates curl bash \
+ && rm -f /etc/apt/apt.conf.d/99insecure \
+ && update-ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+# Install Cursor CLI (places binaries under ~/.local)
 RUN curl https://cursor.com/install -fsS | bash
 
-# Add cursor to PATH if installer didn’t already
-ENV PATH="/root/.cursor/bin:${PATH}"
+# Ensure the CLI is on PATH
+ENV PATH="/root/.local/bin:${PATH}"
 
-# Default to showing help
-ENTRYPOINT ["cursor"]
+# Default entrypoint runs the agent; pass flags like --version at runtime
+ENTRYPOINT ["cursor-agent"]

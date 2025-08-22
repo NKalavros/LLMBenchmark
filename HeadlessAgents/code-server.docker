@@ -1,10 +1,15 @@
 ## Baseline code-server image (control)
 FROM codercom/code-server:latest
 USER root
-RUN apt-get update && apt-get install -y git bash jq && rm -rf /var/lib/apt/lists/*
+RUN set -eux; \
+		for f in /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; do \
+			[ -f "$f" ] && sed -i 's|http://|https://|g' "$f" || true; \
+		done; \
+		apt-get update -o Acquire::Retries=5; \
+		apt-get install -y git bash curl; \
+		rm -rf /var/lib/apt/lists/*
 USER coder
 WORKDIR /home/coder
-COPY baseline_run.sh /usr/local/bin/baseline_run.sh
-RUN chmod +x /usr/local/bin/baseline_run.sh
+COPY --chmod=0755 baseline_run.sh /usr/local/bin/baseline_run.sh
 ENV PROMPT=""
 ENTRYPOINT ["/usr/local/bin/baseline_run.sh"]

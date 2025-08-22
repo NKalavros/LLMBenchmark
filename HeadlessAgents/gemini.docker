@@ -1,0 +1,23 @@
+## Gemini CLI harness (official @google/gemini-cli)
+# Minimal Node image installing the published package globally.
+# We wrap invocation with a run script that (when PROMPT provided) performs a
+# non-interactive single-shot generation using `gemini -p` and records a metrics.json.
+# If no prompt is supplied we just output CLI help and mark status=noop.
+#
+# Auth inside CI: supply one of GEMINI_API_KEY or GOOGLE_API_KEY (API key mode).
+# Optional: GEMINI_MODEL (passed via -m), TEMPERATURE (ignored for now – CLI handles defaults).
+FROM node:20-alpine
+
+ENV NODE_ENV=production \
+    PROMPT="" \
+    GEMINI_MODEL="" \
+    GEMINI_METRICS_DIR=/results
+
+RUN npm install -g @google/gemini-cli && \
+    adduser -D runner && mkdir -p /results && chown -R runner:runner /results
+USER runner
+WORKDIR /workspace
+
+COPY --chmod=0755 gemini_run.sh /usr/local/bin/gemini_run.sh
+
+ENTRYPOINT ["/usr/local/bin/gemini_run.sh"]

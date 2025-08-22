@@ -1,3 +1,7 @@
+Gustavo - Agentic - Integrate Biomni and Robin in our agentic testing
+Gustavo - Agentic - Use NYU Claude key to ensure we can do our quick headless comparison - I guess we can but huge timeout issues
+
+
 1. Code semantics analysis for agents
 
   - Obtain OpenAI embeddings and OpenAI summarization for the code (DSPy)
@@ -16,6 +20,7 @@
   - Gemini CLI - Easy implem
   - Qwen CLI - Easy implem
 
+
 3. Identify 4, 5 challenges to start evaluating
 
 Blood transcriptomics Gestational Age Prediction - This one
@@ -28,4 +33,4 @@ PANACEA challenge (https://pmc.ncbi.nlm.nih.gov/articles/PMC8784774/)
 
 PD-L1 prediction (https://pubmed.ncbi.nlm.nih.gov/38383458/)
 
-4. Evaluation framework for this (DeepEval again?)
+4. Evaluation framework for this (DeepEval again?) - Done

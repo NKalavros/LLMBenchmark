@@ -1,0 +1,21 @@
+## Qwen Code CLI harness (@qwen-code/qwen-code)
+# Mirrors Gemini/Claude patterns; installs official CLI globally and wraps it.
+# Auth options: QWEN OAuth (interactive - not suitable here) or OpenAI-compatible
+# env variables. For non-interactive CI we rely on OPENAI_API_KEY + optional
+# OPENAI_BASE_URL + OPENAI_MODEL (see upstream docs). If absent we still run
+# help to produce noop metrics.
+FROM node:20-alpine
+
+ENV NODE_ENV=production \
+    PROMPT="" \
+    QWEN_MODEL="" \
+    QWEN_METRICS_DIR=/results
+
+RUN npm install -g @qwen-code/qwen-code && \
+    adduser -D runner && mkdir -p /results && chown -R runner:runner /results
+USER runner
+WORKDIR /workspace
+
+COPY --chmod=0755 qwen_run.sh /usr/local/bin/qwen_run.sh
+
+ENTRYPOINT ["/usr/local/bin/qwen_run.sh"]

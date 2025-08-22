@@ -1,12 +1,17 @@
 ## Cline adapter via code-server (experimental)
 FROM codercom/code-server:latest
 USER root
-RUN apt-get update && apt-get install -y git bash curl jq && rm -rf /var/lib/apt/lists/*
+RUN set -eux; \
+		for f in /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; do \
+			[ -f "$f" ] && sed -i 's|http://|https://|g' "$f" || true; \
+		done; \
+		apt-get update -o Acquire::Retries=5; \
+		apt-get install -y git bash curl; \
+		rm -rf /var/lib/apt/lists/*
 USER coder
 WORKDIR /home/coder
 ARG CLINE_EXTENSION_ID=cline.cline
 RUN code-server --install-extension ${CLINE_EXTENSION_ID} || echo "Adjust CLINE_EXTENSION_ID if invalid"
-COPY cline_run.sh /usr/local/bin/cline_run.sh
-RUN chmod +x /usr/local/bin/cline_run.sh
+COPY --chmod=0755 cline_run.sh /usr/local/bin/cline_run.sh
 ENV PROMPT="" MAX_TURNS=25
 ENTRYPOINT ["/usr/local/bin/cline_run.sh"]

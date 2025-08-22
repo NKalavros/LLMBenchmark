@@ -1,11 +1,20 @@
 ## RooCode adapter (experimental)
 FROM codercom/code-server:latest
 USER root
-RUN apt-get update && apt-get install -y git bash curl jq pnpm && rm -rf /var/lib/apt/lists/*
+ENV SHELL=/bin/bash
+RUN apt-get update -o Acquire::Retries=5 && \
+		for f in /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; do \
+			[ -f "$f" ] && sed -i 's|http://|https://|g' "$f" || true; \
+		done; \
+		apt-get update -o Acquire::Retries=5; \
+		apt-get install -y --no-install-recommends git bash curl jq; \
+		rm -rf /var/lib/apt/lists/*; \
+		# Install pnpm (non-fatal in CI) and ensure it's in PATH
+		( curl -fsSL https://get.pnpm.io/install.sh | SHELL=/bin/bash sh - ) || true; \
+		ln -sf /root/.local/share/pnpm/pnpm /usr/local/bin/pnpm || true
 USER coder
 WORKDIR /home/coder
-RUN git clone https://github.com/cte/roo-cli /home/coder/roo-cli || echo "roo-cli placeholder"
-COPY roocode_run.sh /usr/local/bin/roocode_run.sh
-RUN chmod +x /usr/local/bin/roocode_run.sh
+# Optionally clone at runtime; network may be restricted in CI
+COPY --chmod=0755 roocode_run.sh /usr/local/bin/roocode_run.sh
 ENV PROMPT="" MAX_TURNS=25
 ENTRYPOINT ["/usr/local/bin/roocode_run.sh"]

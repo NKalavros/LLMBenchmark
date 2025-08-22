@@ -2,12 +2,18 @@
 # Installs Atlassian ACLI (acli) and sets up a non-interactive harness for Rovo Dev.
 # Non-interactive instructions: acli rovodev run "<instruction>" (modifies repo directly).
 # Interactive mode (acli rovodev run) is NOT suitable for headless automation; we block it by default.
-FROM debian:bookworm-slim
+FROM codercom/code-server:latest
 
+USER root
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y --no-install-recommends \
-	ca-certificates git curl bash jq wget gnupg2 coreutils procps diffutils \
-	&& rm -rf /var/lib/apt/lists/*
+RUN set -eux; \
+		for f in /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; do \
+			[ -f "$f" ] && sed -i 's|http://|https://|g' "$f" || true; \
+		done; \
+		apt-get update -o Acquire::Retries=5; \
+		apt-get install -y --no-install-recommends \
+		git curl bash jq wget coreutils procps diffutils; \
+		rm -rf /var/lib/apt/lists/*
 
 WORKDIR /agent
 
@@ -16,14 +22,15 @@ ARG ACLI_BIN_URL="https://acli.atlassian.com/linux/latest/acli_linux_amd64/acli"
 RUN curl -fsSL "$ACLI_BIN_URL" -o /usr/local/bin/acli && chmod +x /usr/local/bin/acli \
 	&& /usr/local/bin/acli --version || echo "(ACLI version check skipped if network blocked)"
 
-# Create a dedicated user (least privilege)
-RUN useradd -m -u 1000 rovo && mkdir -p /workspace /results /state && chown -R rovo:rovo /workspace /results /state
-USER rovo
-WORKDIR /workspace
+# Reuse existing non-root user from base image (coder), ensure writable dirs
+RUN mkdir -p /workspace /results /state && chown -R coder:coder /workspace /results /state
 
 # Copy run harness
 COPY rovo_run.sh /usr/local/bin/rovo_run.sh
 RUN chmod +x /usr/local/bin/rovo_run.sh
+
+USER coder
+WORKDIR /workspace
 
 # Environment variables:
 # PROMPT / ROVO_PROMPT: instruction for non-interactive mode

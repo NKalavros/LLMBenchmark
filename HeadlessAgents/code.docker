@@ -1,34 +1,19 @@
-# Use a base image, e.g., Ubuntu
 FROM ubuntu:22.04
 
-# Update packages and install prerequisites
-RUN apt-get update && apt-get install -y \
-    wget \
-    gnupg \
-    sudo
-
-# Import Microsoft GPG key
-RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
-    && mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-
-# Add VS Code repository
-RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
-
-# Install VS Code
-RUN apt-get update && apt-get install -y code
-
-# Optional: Add a non-root user for security (recommended)
+# Minimal prompt-only image (no GUI). Creates a non-root user and drops into bash.
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=1000
 
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN groupadd --gid ${USER_GID} ${USERNAME} \
+ && useradd -s /bin/bash --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME}
 
-# Switch to the non-root user
-USER $USERNAME
+COPY run-agent.sh /usr/local/bin/run-agent
+RUN chmod +x /usr/local/bin/run-agent
 
-# Define a default command to run when the container starts
-# This example simply starts a shell for the user
+USER ${USERNAME}
+WORKDIR /home/${USERNAME}
+
+# Entrypoint script accepts -p/--prompt and executes $AGENT_CMD with $PROMPT available
+ENTRYPOINT ["/usr/local/bin/run-agent"]
 CMD ["/bin/bash"]

@@ -2,8 +2,3 @@ FROM node:18-alpine
 
 # Install Claude Code CLI globally
 RUN npm install -g @anthropic-ai/claude-code
-
-# Optional: Initialize Claude Code silently (use with caution in production)
-# The --dangerously-skip-permissions flag bypasses permission prompts.
-# Consider the security implications before using this in a production environment.
-RUN claude --dangerously-skip-permissions
